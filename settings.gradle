@@ -1,0 +1,1 @@
+include ':app', ':inner_notification'

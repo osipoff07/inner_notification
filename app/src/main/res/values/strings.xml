@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Inner notification</string>
+
+
+    <string name="open_chat_button_name">Open chat</string>
+    <string name="inner_notification_button_name">Send inner notification</string>
+    <string name="common_notification_button_name">Send common notification</string>
+
+    <string name="title_activity_chat">ChatActivity</string>
+</resources>
