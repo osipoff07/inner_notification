@@ -1,4 +1,4 @@
 # How initialize
-<br>
+```java
 registerActivityLifecycleCallbacks(NotificationApplicationCallback(this, managerConfig))
-</br>
+```
