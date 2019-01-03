@@ -1,8 +1,8 @@
 package io.inner.notification.example
 
 import android.app.Application
-import io.inner.notif.taystynotification.R
 import io.inner.notification.NotificationApplicationCallback
+import io.inner.notification.R
 import io.inner.notification.config.ManagerConfig
 
 class SampleApplication: Application() {

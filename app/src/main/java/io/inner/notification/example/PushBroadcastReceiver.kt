@@ -4,7 +4,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import io.inner.notification.NotificationSender
-import io.inner.notif.taystynotification.R
+import io.inner.notification.R
+import io.inner.notification.models.identity.Priority
 
 class PushBroadcastReceiver : BroadcastReceiver() {
 
@@ -12,9 +13,10 @@ class PushBroadcastReceiver : BroadcastReceiver() {
             context: Context,
             intent: Intent?
     ) {
-        NotificationSender("Hello", Intent(context, ChatActivity::class.java))
+        NotificationSender("New message", Intent(context, ChatActivity::class.java))
                 .setImage(R.drawable.image)
-                .setText("sosos")
+                .setText("How are you?")
+                .setPriority(Priority.MAX)
                 .send()
     }
 }
