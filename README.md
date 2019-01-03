@@ -1,2 +1,4 @@
-# inner_notification
-io.inner_notification
+# How initialize
+<br>
+registerActivityLifecycleCallbacks(NotificationApplicationCallback(this, managerConfig))
+</br>
