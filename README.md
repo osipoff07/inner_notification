@@ -5,6 +5,7 @@ Inner notifications
 This is a simple library that works with notifications! User can *disable notification from settings, but application will still get them.*
 The library can track your application activities and sending inner notifications if the application is in foreground.
 This library also provides simple functionality for configuring and sending common push notification with *channel support(API 26 and higher)*
+
 ![InnerNotification Sample](static/sample.gif)
 
 Download:
