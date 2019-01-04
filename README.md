@@ -1,6 +1,6 @@
 Inner notifications
 ===================
-![Logo](static/innerNotification.png)
+![Logo](static/logo.png)
 ### What is it?
 This is a simple library that works with notifications! User can *disable notification from settings, but application will still get them.*
 The library can track your application activities and sending inner notifications if the application is in foreground.
