@@ -1,11 +1,11 @@
-Info
-------
-#What is it?
-This is simple library that worked with notifications! User can __disable notification from settings, but the application still gets them.__
-Library can track your application activities and sending inner notifications, if the application in foreground.
-Also library provide simple functionality to configure and sending common push notification with __channel support(API 26 and higher)__
-
-![InnerNotification Sample](sample.gif)
+Inner notifications
+===================
+![Logo](static/innerNotification.png)
+### What is it?
+This is a simple library that works with notifications! User can *disable notification from settings, but application will still get them.*
+The library can track your application activities and sending inner notifications if the application is in foreground.
+This library also provides simple functionality for configuring and sending common push notification with *channel support(API 26 and higher)*
+![InnerNotification Sample](static/sample.gif)
 
 Download:
 --------
@@ -27,7 +27,7 @@ Maven
 
 Using
 -------
-For using you need to create application class and register NotificationApplicationCallback to activity lifecycle:
+For using you need to create application class and register NotificationApplicationCallback to application lifecycle:
 ```java
 class SampleApplication: Application() {
 
@@ -43,7 +43,7 @@ class SampleApplication: Application() {
     }
 }
 ```
-For sending notification you need create NotificationSender, configure it and call method send():
+For sending notification you need to create NotificationSender, configure it and call method __send()__. Example:
 ```java
 NotificationSender("You have new message", Intent(context, ChatActivity::class.java))
     .setImage(R.drawable.image)
@@ -70,34 +70,33 @@ NotificationSender(
 
 Configuration
 --------------
-#Library config
-For configure Notification library you need to create ManagerConfig before initialization.
-ManagerConfig fields:
-- innerNotificationEnabled: Boolean - is need to send inner notifications, true by default
-- commonNotificationEnabled: Boolean - is need to send common notification, true by default
-- isNeedsToAddLaunchActivity: Boolean - is need to add launch activity(MainActivity), for opening common notification
-- sound: Int? (@RawRes) - raw res of your notification sound, null by default
-- defaultSettingsName: Int (@StringRes) - for Android O and higher, in settings user can configure notifications and it's channel name by default
-- appIcon: Int (@DrawableRes) - res of your app icon
-- color: Int (@ColorRes) - resource background color of application icon
-#Notification config
-All configuration that you need is available from NotificationSender
+### Library config
+To configure Notification library you need to create ManagerConfig before initialization. ManagerConfig fields:
+* __innerNotificationEnabled: Boolean__ - used to send inner notifications, true by default
+* __commonNotificationEnabled: Boolean__ - used to send common notification, true by default
+* __isNeedsToAddLaunchActivity: Boolean__ - used to add launch activity(MainActivity), for opening common notification
+* __sound: Int? (@RawRes)__ - raw res of your notification sound, null by default
+* __defaultSettingsName: Int (@StringRes)__ - for Android O and higher, in settings user can configure notifications and their channel name by default
+* __appIcon: Int (@DrawableRes)__ - res of your app icon
+* __color: Int (@ColorRes)__ - resource background color of application icon
+### Notification config
+All configuration you need is available from NotificationSender
 Otherwise you can create NotificationConfig and set it to NotificationSender
 NotificationConfig fields:
-- innerNotificationEnabled: Boolean - is need to send inner notifications, true by default
-- commonNotificationEnabled: Boolean - is need to send common notification, true by default
-- color: Int (@ColorRes) - resource background color of application icon
-- appIcon: Int (@DrawableRes) - res of your app icon
-- sound: Int? (@RawRes) - raw res of your notification sound, null by default
-Priority of that class is higher than ManagerConfig.
-#Identity
-It's class to identify you push notification:
-NotificationIdentity fields
-- id: Long - push id, by default library creating id from system timestamp
-- type: Type - contains information for channel supporting(type and user settings name)
-- priority: Priority - priority of your notification, using by notification and by channel
-#Excluding notifications
-If you want to skip notification from some screen - you can exclude it by ExcludedRule
+* __innerNotificationEnabled: Boolean__ - is need to send inner notifications, true by default
+* __commonNotificationEnabled: Boolean__ - is need to send common notification, true by default
+* __color: Int (@ColorRes)__ - resource background color of application icon
+* __appIcon: Int (@DrawableRes)__ - res of your app icon
+* __sound: Int? (@RawRes)__ - raw res of your notification sound, null by default
+*Priority of NotificationConfig is higher than ManagerConfig.*
+### Identity
+It's class for identifying you push notification:
+NotificationIdentity fields:
+* __id: Long__ - push id, by default the library creates the id from system timestamp
+* __type: Type__ - contains information for channel support (type and user settings name)
+* __priority: Priority__ - priority of your notification, used by notification and by the channel
+### Excluding notifications
+If you want to skip notification in some screen - you can exclude it by ExcludedRule. Example:
 ```java
 //this code also available in Fragment
 class SomeActivity: Activity() {

@@ -7,6 +7,11 @@ import io.inner.notification.NotificationSender
 import io.inner.notification.R
 import io.inner.notification.models.identity.Priority
 
+/**
+ * Work only with emulator
+ * ADB command:
+ * adb shell "am broadcast -a com.google.android.c2dm.intent.RECEIVE --es text 'test msg' --es source 1 -n io.inner.notification/io.inner.notification.example.PushBroadcastReceiver"
+ */
 class PushBroadcastReceiver : BroadcastReceiver() {
 
     override fun onReceive(
