@@ -51,16 +51,16 @@ NotificationSender("You have new message", Intent(context, ChatActivity::class.j
     .setText("How are you?")
     .send()
 ```
-You can configure push with actions:
-1) Open Application
+### You can configure push with actions:
+- Open Application
 ```java
 NotificationSender(R.string.default_new_message)
 ```
-2) Url(or deeplink)
+- Url(or deeplink)
 ```java
 NotificationSender(R.string.default_new_message, "yourappscheme://open_post")
 ```
-3) Array of Intents
+- Array of Intents
 ```java
 NotificationSender(
     R.string.default_new_message,
